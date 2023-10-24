@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio</title>
+    <style>
+        table, td, th{border: 5px; border: solid; border-collapse: collapse;}
+    </style>
+</head>
+<body>
+    <a href=""></a>
+    <h1></h1>
+    <h2></h2>
+    <p></p>
+    <a href=""></a>
+    <h2>TABELLA</h2><!--table no responsive, non si adatta a seconda della
+    dimensione dello schermo e il suo contenuto è statico, per questo è
+    stata sostuita da flex-box. la tab e grande quanto gli elementi che 
+    contiene, ha un display table che è come un display blok-->
+    <table>
+        <tbody><!--corpo della tabella-->
+        <tr>
+          <td>cella1</td>
+          <td>cella2</td>
+          <td>cella3</td>
+        </tr>
+        <tr>
+          <td>cella1</td>
+          <td>cella2</td>
+          <td>cella3</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>nome</th>
+                <th>cognome</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>mario</th>
+                <th>rossi</th>
+                <th>none</th>
+            </tr>
+            <tr>
+                <th>carlo</th>
+                <th>grande</th>
+                <th>none</th>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">totale utenti 2</td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+    <form action="">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+    </form>
+    <fieldset>
+        <legend>Anagrafica</legend>
+        <label for="nome">Nome </label>
+        <input type="text" id="nome" name="anagrafica">
+        <label for="cognome">Cognome </label>
+        <input type="text" id="cognome" name="anagrafica">
+        <label for="dataNascita">Data di nascita</label>
+        <input type="date" id="dataNascita" name="anagrafica">
+        <hr>
+        <label for="indirizzo">Indirizzo</label>
+        <textarea name="indirizzo" id="indirizzo"></textarea>
+
+    </fieldset>
+
+</body>
+</html>
