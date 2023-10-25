@@ -6,6 +6,8 @@
 		<title>Form</title>
 	</head>
 	<body>
+        <!--la modulista è il modo principale per interagire con l'user attraverso la nostra app,
+        ad esempio un post su fb. Il form una volta inviato alimenta il database.-->
 		<ul>
 			<li><a href="index.html" alt="Home page">Home</a></li>
 			<li><a href="form.html" alt="Form">Form</a></li>
@@ -14,21 +16,23 @@
 		<form>
 			<label for="username">Username: </label>
 			<input type="text" id="username" name="username" />
+            <!--for di label e id di input devono portare lo stesso valore 
+            per poter essere 'agganciati tra loro'-->
 		</form>
 
 		<hr />
 
 		<form>
             <!-- Gruppo anagrafica -->
-			<fieldset>
-				<legend>Anagrafica</legend>
+			<fieldset><!--viene utilizzato per raggruppare diversi controlli ed etichette ( ) all'interno di un modulo web-->
+				<legend>Anagrafica</legend><!--rappresenta una didascalia per il contenuto del suo genitore-->
 				<label for="nome">Nome </label>
 				<input type="text" id="nome" name="anagrafica" required />
 				<label for="cognome">Cognome </label>
 				<input type="text" id="cognome" name="anagrafica" required />
 				<label for="dataNascita">Data di nascita </label>
 				<input type="date" id="dataNascita" name="anagrafica" placeholder="Data di nascita in formato gg/mm/aaaa" />
-				<p></p>
+				<p></p><!--per staccare un pò parti diverse ma correlate dello stesso form-->
 				<label for="indirizzo">Indirizzo</label>
 				<textarea id="indirizzo" name="indirizzo"></textarea>
                 <p></p>
@@ -39,6 +43,9 @@
                 <label for="password">Password scelta </label>
                 <input type="password" id="password" name="password" placeholder="Inserire tra 8 e 16 caratteri con una maiuscola, una minuscola, un numero e un simbolo" size="100" maxlength="16" minlength="8" required/>
 			</fieldset>
+            <!--required: se presente, indica che l'utente deve specificare un valore per l'input prima che il modulo proprietario possa essere inviato;
+                textarea:, utile quando si desidera consentire agli utenti di inserire una quantità considerevole di testo in formato libero, ad esempio
+                un commento su un modulo di recensione o feedback-->
 
             <!-- Gruppo competenze -->
             <fieldset>
@@ -57,7 +64,7 @@
             <fieldset>
                 <legend>Tipologia di corso</legend>
                 <label for="corso">Corso scelto </label>
-                <select id="corso" name="corso" required>
+                <select id="corso" name="corso" required><!-- rappresenta un controllo che fornisce un menu di opzioni-->
                     <option selected></option>
                     <option value="frontEnd">Front-End</option>
                     <option value="backEnd">Back-End</option>
@@ -66,7 +73,7 @@
                 <p></p>
                 <label for="durata">Tipo di corso</label>
                 <br />
-                <input type="radio" id="partMatt" name="durata">
+                <input type="radio" id="partMatt" name="durata"><!--se condividono lo stesso nome si può selezionare solo una opzione-->
                 <label for="partMatt">Part-time (mattina)</label><br />
                 <input type="radio" id="partSera" name="durata">
                 <label for="partSera">Part-time (serale)</label><br />
@@ -76,6 +83,20 @@
                 <label for="pagamento">Numero rate</label>
                 <input type="number" id="pagamento" name="pagamento" min="3" max="6" value="3" /><span> (Inserire un numero di rate tra 3 e 6)</span>
             </fieldset>
+            <p></p>
+
+            <button type="submit" id="invia">Invia</button>
+            &nbsp;
+            <button type="reset" id="cancella">Cancella</button>
 		</form>
+        <!--Option: definisce un'opzione in un elenco di selezione, questo tag può portare attributi quali:
+            -disabled: Se questo attributo booleano è impostato, questa opzione non è selezionabile.
+            Spesso i browser disattivano tale controllo e non ricevono alcun evento di navigazione, come
+            clic del mouse o eventi relativi al focus;
+            -label:Questo attributo è il testo per l'etichetta che indica il significato dell'opzione.
+            Se l' label attributo non è definito, il suo valore è quello del contenuto testuale dell'elemento;
+            -selected: se presente, questo attributo booleano indica che l'opzione è inizialmente selezionata;-->
+
+            
 	</body>
 </html>

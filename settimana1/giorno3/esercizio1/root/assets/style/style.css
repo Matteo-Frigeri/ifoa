@@ -1,0 +1,55 @@
+body{margin: 0;
+font-family: Arial, Helvetica, sans-serif;}
+
+#logo{
+width: 50%;
+margin: 0 auto;}
+
+#logo img{width: 35%;
+margin-left: 30%;}
+
+#textlogo{border-top:3px solid rgb(190, 117, 83);
+background-color: rgb(241, 229, 220);
+text-align: center;
+padding: 1%;
+color: rgb(96, 108, 141);}
+
+#main{width: 60%;
+margin: 0 auto;
+;}
+
+#main h1{text-align: center;}
+
+#main figure{margin: 0;}
+
+#main img{ width: 100%;
+border-radius: 10px;
+border-image: 0;
+;}
+
+#main figcaption{font-size: smaller;
+text-align: center;
+color: gray;}
+
+#main p:last-child{color: red;
+padding-left:2%;
+border-left: 2px solid rgb(190, 117, 83);
+margin-top: 8%;}
+
+#list{width: 60%;
+margin: 0 auto;}
+
+#list h2{padding-bottom: 2%;
+border-bottom:1px solid aquamarine}
+
+#lastpart{width: 60%;
+margin:0 auto;
+}
+
+#lastpart h2{padding-bottom:2%;
+border-bottom: 1px solid aquamarine}
+
+#lastpart p{margin-left: 7%;}
+
+#footerlink{width: 60%;
+margin: 0 auto;}

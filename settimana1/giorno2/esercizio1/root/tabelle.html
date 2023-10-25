@@ -8,7 +8,7 @@
 		<style>
 			table {
 				border: 1px solid black;
-				border-collapse: collapse;
+				border-collapse: collapse;/*valore di style per condensare le celle*/
 			}
 
 			td,
@@ -21,16 +21,16 @@
 	<body>
 
         <ul>
-            <li><a href="index.html" alt="Home page">Home</a></li>
+            <li><a href="index.html" alt="Home page">Home</a></li><!--link interni alla pagina-->
             <li><a href="form.html" alt="Form">Form</a></li>
         </ul>
 
 		<h1>TABELLE</h1>
 
-		<table>
-			<tbody>
-				<tr>
-					<td>Cella 1</td>
+		<table><!--È il contenitore di tutta la tabella e la definisce-->
+			<tbody><!--testa della tabella-->
+				<tr><!--table row" Contiene una riga della tabella-->
+					<td>Cella 1</td><!--"table data" Una cella che contiene i valori all'interno di una riga-->
 					<td>Cella 2</td>
 					<td>Cella 3</td>
 				</tr>
@@ -41,18 +41,25 @@
 				</tr>
 			</tbody>
 		</table>
+		<!--Questo tipo di tabella era un elemento predominante nel "vecchio Web" (ed è ancora presente in quello attuale),
+			perché funzionale anche alla suddivisione degli spazi, oltre che alla rappresentazione dei dati.
+			Con il consolidarsi di pratiche più specifiche per il markup dei layout, questo utilizzo delle
+			tabelle è caduto in disuso.-->
 
 		<hr />
 
 		<table>
-			<thead>
+			<thead><!--Serve per raggruppare le righe che rappresentano l'intestazione della tabella.-->
 				<tr>
-					<th>Nome</th>
+					<th>Nome</th><!--"table header" Indica una cella che contiene un intestazione
+						          (ad esempio il titolo di una colonna o di una riga) e serve a dare una
+						          definizione dei dati cui si riferisce.-->
 					<th>Cognome</th>
 					<th>Email</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody><!--Raggruppa le righe che contengono il corpo della tabella,
+				 spesso con i dati veri e propri.-->
 				<tr>
 					<td>Mario</td>
 					<td>Rossi</td>
@@ -69,9 +76,10 @@
 					<td>anna@verdi.com</td>
 				</tr>
 			</tbody>
-			<tfoot>
+			<tfoot><!--Racchiude le righe che utilizziamo come footer della tabella,
+				 in cui si possono inserire dei dati di riepilogo, somme, medie, etc.-->
 				<tr>
-					<td colspan="3"><strong>utenti: 3</strong></td>
+					<td colspan="3"><strong>utenti: 3</strong></td><!--Per fare in modo che una cella si estenda su più colonne-->
 				</tr>
 			</tfoot>
 		</table>
@@ -94,7 +102,7 @@
                 <tr>
                     <td>riga 2 cella 1</td>
                     <td colspan="2">riga 2 celle 2-3</td>
-                    <td rowspan="2">riga 2-3 cella 4</td>
+                    <td rowspan="2">riga 2-3 cella 4</td><!--Per fare in modo che una cella si estenda su più righe-->
                 </tr>
                 <tr>
                     <td rowspan="2">riga 3-4 cella 1</td>
