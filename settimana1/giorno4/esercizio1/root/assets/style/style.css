@@ -1,0 +1,29 @@
+body{margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-size: 1.2em;
+background-image: url(/settimana1/giorno4/esercizio1/root/assets/immagini/sfondo.png);
+font-family: 'Times New Roman', Times, serif;}
+
+header{background-image: linear-gradient(to top, blue, white);;
+width: 95%;
+margin: 0 auto;
+margin-top: 2%;
+;}
+header p{text-align: center;
+font-weight: bolder;}
+
+header img{ margin-left: 25%;}
+
+#corpo{background-color: white;
+width: 95%;
+margin: 0 auto;
+margin-top: 2%;}
+
+
+
+
+
+
+
+
