@@ -4,60 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>esercizio2g4</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
     <header>
-        <img src="assets/immagini/logo.svg" alt="logo epicode">
+        <img src="assets/immagini/logo.svg" alt="logo epicode" width="500" height="100">
         <p>EPICODE-IL BLOG DEI DEVELOPERS</p>
-        <P>=>HOME<=</P>
-        <P>=>ARTICOLI<=</P>
-        <P>=>LAVORA CON NOI<=</P>
+        <nav>
+        <ul>
+            <li>
+            <a href="index.html" title="Home">Home</a>
+            </li>
+            <li>
+            <a href="articoli.html" title="Articoli">Articoli</a>
+            </li>
+            <li>
+            <a href="contatti.html" title="Lavoro">Lavora con noi</a>
+            </li>
+        </ul>
+        </nav>
     </header>
-
-
-    <div id="corpo">
     <main>
-        <div>
         <h1>COME CREARE UN TEMPLATE PER I POST</h1><br>
-        <p><span class="material-symbols-outlined">edit</span>
+        <p><span class="fas fa-pen-square"></span>
         di Mario Rossi-
-        <span class="material-symbols-outlined">schedule</span>
+        <span class="fas fa-clock"></span>
         pubblicato il 25-10-2020</p>
         <div>
-            <p>La prima cosa da fare è suddividere in blocchi logici la pagina, identificare le 
-            parti comuni da applicare a tutte le pagine
-            </p>
-            <br>
-            <p>le varie aree saranno quindi suddivise in:</p>
-            <ul>
-                <li>Contenuti di intestazione del tag <button>< headre ></button></li>
-                <li>Contenuti centrali variabili del tag <button>< main ></button>(corpo principale)</li>
-                <li>Contenuti di fine pagina comuni, da inserire ne l tag <button>< footer ></button></li>
-            </ul>
-            <br>
-            <p>formattazione del codice di testo dell'articolo dovrà essere formattato per identificare tutte
-                le parti da selezionare con CSS. Perciò i passi saranno:</p>
-            <ol>
-                <li>Progettare su carta il markup finale</li>
-                <li>Scrivere l'HTML dei tag esterni</li>
-                <li>Applicare gli stili CSS</li>
-            </ol>
-            <br>
-            <p>L'applicazione di stili CSS è cresciuta negli anni sino a raggiunggere la diffusione 
-                pressoché totale.
-            </p>
-            <br>
-        </div>
-    </main>
-    <aside>
-        <div>
-            <table id="tabella">
-                <thead>
-                    <tr>
-                        <th colspan="3"><i>Diffusione dei CSS</i></th>
-                    </tr>
+        <p>La prima cosa da fare è suddividere in blocchi logici la pagina, identificare le 
+        <strong>parti comuni </strong> da applicare a tutte le pagine
+        </p>
+            
+        <p>le varie aree saranno quindi suddivise in:</p>
+        <ul>
+            <li>Contenuti di intestazione del tag <code>&lt;header&gt;</code></li>
+            <li>Contenuti centrali variabili del tag <code>&lt;main&gt;</code>(corpo principale)</li>
+            <li>Contenuti di fine pagina comuni, da inserire ne l tag <code>&lt;footer&gt;</code></li>
+        </ul>
+            
+        <h>formattazione del codice di testo dell'articolo dovrà essere formattato per identificare tutte
+            le parti da <strong>selezionare con CSS</strong>. Perciò i passi saranno:</p>
+        <ol>
+            <li>Progettare su carta il markup finale</li>
+            <li>Scrivere l'HTML dei tag esterni</li>
+            <li>Applicare gli stili CSS</li>
+        </ol>
+            
+        <p>L'applicazione di stili CSS è cresciuta negli anni sino a raggiunggere la diffusione 
+            pressoché totale.
+        </p>
+
+        <table id="tabella">
+            <caption>Diffusione dei CSS</caption>
+               <thead>
+                <tr id="campi">
+                    <th>Anno</th>
+                    <th>% utilizzo</th>
+                    <th>Supporto browser</th>
+                </tr>
                 </thead>
                 <tbody>
                     <tr id="campi">
@@ -91,48 +98,50 @@
                         <td>76%</td>
                     </tr>
                 </tbody>
-            </table>
-        </div>
-        <br>
-        <div>
-        <p>Untest di validazione potrà essere fatto tramite il <a href="">tool online</a>
+        </table>
+
+        <p>Untest di validazione potrà essere fatto tramite il 
+        <a href="https://jigsaw.w3.org/css-validator/" target="blank" title="Validatore CSS online del W3C">tool online</a>
         dedicato allo scopo. Una volta volta ottimizzato il tutto, avremo raggiunto il
         nostro obbiettivo, ed essere stati dei veri developer come loro:</p>
-        <iframe src="" frameborder="0"></iframe>
-        </div>
-        <div id="novita">
-            <h3>NOVITA'</h3>
+
+        <iframe width="350" height="350" src="https://www.youtube.com/embed/dvOvHXruEDM"
+        title="YouTube"></iframe>
+            
+        <section>
+            <h3>Novità</h3>
             <p>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla nostra 
-                newsletter:
+            newsletter:
             </p>
             <input type="text" placeholder="inserisci mail"><button>iscriviti!</button>
-        </div>
-        <div>
+        </section>
+        
+        <aside>
             <h3>ARTICOLI CORRELATI</h3>
-        </div>
-        <div>
+            <div>
+            <p><i class="fas fa-tag"></i> Categoria: develop</p>
+            <p><i class="fas fa-calendar-alt"></i> Data: 18-9-2020</p>
             <a href=javascript:avoid()>Validare il codice HTML</a>
-            <br>
-            <span class="material-symbols-outlined">sell</span>
-            <p>Categoria: develop</p>
-            <span class="material-symbols-outlined">calendar_month</span>
-            <p>Data:18-09-2022</p>
-        </div>
-        <div>
-            <a href=javascript:avoid()>Correggie la sintassi</a>
-            <br>
-            <span class="material-symbols-outlined">sell</span>
-            <p>Categoria: develop</p>
-            <span class="material-symbols-outlined">calendar_month</span>
-            <p>Data:16-09-2022</p>
-        </div>
-    </aside>
-    </div>
+            </div>
+            
+            <div>
+            <a href=javascript:avoid()>Correggere la sintassi</a>
+            <p><i class="fas fa-tag"></i> Categoria: develop</p>
+            <p><i class="fas fa-calendar-alt"></i> Data: 16-9-2020</p>
+            </div>
+        </aside>
+    </main>
+    
+    <br>
+    
     <footer>
-    <p>Blog epicode ® </p>
-    <p>Testa online di mario rossi,... <a href="info@epicode.school">info@epicode.school</a></p>
-
-    </footer>
+        <p>Blog Epicode &copy;2021</p>
+        <address>
+        Testata online di Mario Rossi, registrata con prot. n.213/2018 - vi Luigi Einaudi 2
+        - Milano. P.IVA 00112233.
+        <a href=javascript:avoid()>info@epicode.school</a>
+        </address>
+      </footer>
     
 </body>
 </html>
