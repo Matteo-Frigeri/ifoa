@@ -22,21 +22,22 @@ if(numero4%5==0){console.log('divisibile')}else{console.log('non divisibile')};
 */
 let numero5=45;
 let numero6=55;
-if((munero5==8 || numero6==8) || (numero5+numero6==8 || numero5-numero6==8)){console.log('verificato')}else{console.log('non verificato')};
+if(numero5==8 || numero6==8){console.log('uguale a 8')}else{console.log('diverso da 8')};
+if(numero5+numero6==8 || numero5-numero6==8){console.log('uguale a 8')}else{console.log('diverso da 8')}
 
 /* ESERCIZIO 5
   Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
   C'è una promozione in corso: se il totale del carrello supera 50, l'utente ha diritto alla spedizione gratuita (altrimenti la spedizione ha un costo fisso pari a 10).
   Crea un algoritmo che determini l'ammontare totale che deve essere addebitato all'utente per il checkout.
 */
-let totalShoppingCart=100;
+let totalShoppingCart=49;
 if(totalShoppingCart>50){console.log('hai diritto alla spedizione gratuita!')}else{console.log('la spedizione ha un costo fisso pari a',totalShoppingCart+10)};
 
 /* ESERCIZIO 6
   Stai lavorando su un sito di e-commerce. Oggi è il Black Friday e viene applicato il 20% su ogni prodotto.
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando come prima se le spedizioni sono gratuite oppure no e e calcolando il totale.
 */
-let totalBlack=totalShoppingCart*0.20;
+let totalBlack=totalShoppingCart-(totalShoppingCart*0.20);
 console.log(totalBlack);
 if(totalBlack>50){console.log('hai diritto alla spedizione gratuita!')}else{console.log('la spedizione ha un costo fisso pari a',totalBlack+10)};
 
@@ -48,6 +49,7 @@ if(totalBlack>50){console.log('hai diritto alla spedizione gratuita!')}else{cons
 let numero7=1;
 let numero8=2;
 let numero9=3;
+if (numero7<numero8<numero9){console.log(numero7, numero8,numero9)}
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
@@ -72,7 +74,7 @@ if(numero10%2==0){console.log('è pari')}else{console.log('è dispari')};
       console.log("Meno di 5");
     } else {
       console.log("Uguale a 6 o maggiore");
-    }
+    };
 
 /* ESERCIZIO 11
   Fornito il seguente oggetto, scrivi del codice per aggiungere una proprietà "city", il cui valore sarà "Toronto".
@@ -82,13 +84,14 @@ const me = {
   name: 'John',
   lastName: 'Doe',
   skills: ['javascript', 'html', 'css'],
-}
-me.city='Toronto'
+};
+me.city='Toronto';
+console.log(me.city);
 
 /* ESERCIZIO 12
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".
 */
-delete lastName;
+delete me.lastName;
 console.log(me.lastName);
 
 /* ESERCIZIO 13 no
