@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esercizio 1</title>
     <link rel="stylesheet" href="assets/style/style.css">
+    <style>
+    body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
+    font-size: smaller;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: left;
+}
+    h1{
+        text-shadow: -4px -4px 8px green;
+    }
+    #text{
+        background-color: red;
+        background-image: url(/settimana1/progrttosettimanale/root/asset/img/foto1.jpg);
+        background-position:center;  
+        background-repeat: no-repeat;
+    }
+
+    #text > p{
+        color: red;
+    }
+
+    h2 + p{
+        color: aqua;
+    }
+    form::before{content: open-quote;}
+    form::after{content: close-quote;}
+    </style>
 </head>
 <body>
     <div>
@@ -33,6 +63,67 @@
     </p>
 
     <a href="#inizio" alt="Torna su">Torna su</a>
+
+    <form action="">
+        <legend></legend>
+        <label for="nome">Nome</label>
+        <input type="text" required maxlength="10" autocomplete="on" autofocus>
+        <label for="textarea">Scrivi il tuo problema</label>
+        <textarea name="problemi" id="textarea" cols="20" rows="5" wrap="soft"></textarea>
+        <label for="materia">Materia preferite</label>
+        <select name="scegli materia" id="materia">
+            <optgroup>
+                <option value="Nessuna">Nessuna</option>
+            </optgroup>
+            <optgroup label="Lezioni serali">
+                <option value="inglese">Inglese</option>
+                <option value="italiano">Italiano</option>
+                <option value="storia">Storia</option>
+            </optgroup>
+            <optgroup label="Lezioni diurne">
+                <option value="Matematica">Matematica</option>
+                <option value="Geografia">Geografia</option>
+                <option value="Scienze">Scienze</option>
+            </optgroup>
+        </select>
+        <button type="submit">Spedisci</button>
+        <button type="reset">Restta campi</button>
+        <button type="button">Fake</button>  
+    </form>
+    <audio title="audio di prova" muted loop controls>
+        <source src="" type="">
+        Attenzione! audio non supportato dal tuo Browser
+    </audio>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/e_s5Cij7qvA?si=YFNrSjhlk-PWWW6a&amp;start=110" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <picture>
+        <img src="https://creativecode.it/wp-content/uploads/2019/05/html5-logo.png" width="30vw" height="40vh" alt="HTML">
+    </picture>
+    <div id="text">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Commodi iusto soluta dolor magni obcaecati, nesciunt 
+        beatae suscipit recusandae ea ad repellat eum laudantium
+        consequuntur nobis similique, quas tenetur, impedit non!
+    </p>
+        <div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Commodi iusto soluta dolor magni obcaecati, nesciunt 
+        beatae suscipit recusandae ea ad repellat eum laudantium
+        consequuntur nobis similique, quas tenetur, impedit non!</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Commodi iusto soluta dolor magni obcaecati, nesciunt 
+        beatae suscipit recusandae ea ad repellat eum laudantium
+        consequuntur nobis similique, quas tenetur, impedit non!
+    </p>
+        </div>
+
+    </div>
+
+    <div>
+        <img src="/settimana1/progrttosettimanale/root/asset/img/foto1.jpg" alt="">
+    </div>
+
+
 
 </body>
 </html>
