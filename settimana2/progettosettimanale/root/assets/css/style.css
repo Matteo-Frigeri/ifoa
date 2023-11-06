@@ -1,0 +1,122 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(233, 226, 226);
+}
+/*logo*/
+#logo{
+    background-color: black;
+}
+#logoAmazon{
+    height: 30px;
+}
+/*navbar*/
+#menu{
+    height: 7%;
+    background-color: rgb(69, 69, 122);
+    justify-content: center;
+}
+
+#menu p{
+    display: inline;
+    margin-left: 2% ;
+    font-size: xx-small;
+    color: white;
+}
+/*blocco arancio*/
+#orange{
+    background-color: rgb(255, 102, 0);
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 6%;
+}
+#orange p{
+    color: white;
+    font-size: xx-small;
+    padding: 1%;
+}
+/*blocco verde*/
+#titolo{
+    margin: 2% 2% 2% 2%;
+}
+#titolo h1{
+    font-size: large;
+    color: white;
+    text-align: center;
+    background-image: url(/settimana2/progettosettimanale/root/assets/immagini/bg-image.png);
+    background-size:contain;
+    padding: 5%;
+}
+#titolo b{
+    font-size: xx-small;
+}
+/*immagini del main*/
+main{
+    background-color: white;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#textimage h3{
+    font-size: xx-small;
+    padding-top: 1%;
+}
+#textimage a{
+    font-size: smaller;
+    color: blue;
+    padding-left: 1.5%;
+}
+#image1{
+    margin: 2% 2% 2% 2%;
+}
+#image1 img{
+    width: 151px;
+    height: 150px;
+    border-radius: 5%;
+    box-shadow: 2px 2px 2px rgb(207, 200, 200)
+}
+/*immagini aside*/
+.image2 img{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
+}
+.image2 p{
+    text-align: center;
+    font-size: xx-small;
+    margin-top: 0;
+}
+.image2 a{
+    font-size: smaller;
+    color: blue;
+    padding-left: 1.5%;
+}
+/*footer*/
+footer a{
+    font-size: 0.5em;
+    text-decoration: underline;
+    color: white;
+    text-align: center;
+    display: block;
+    background-color: rgb(69, 69, 122);
+    padding: 1%;
+}
+#logobase{
+    background-color: black;
+    height: 5%;
+}
+#logobase img{
+    height: 35px;
+    margin-left: 43%;
+}
+
+
+
+
+
+
+
+
