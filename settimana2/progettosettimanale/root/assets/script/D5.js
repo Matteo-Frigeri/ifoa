@@ -70,6 +70,12 @@ cars.push({
 },);
 console.log(cars);
 
+cars[0].trims.pop();
+cars[1].trims.pop();
+cars[2].trims.pop();
+cars[3].trims.pop();
+console.log(cars);
+
 /* ESERCIZIO 7
     Scrivi del codice per salvare il primo elemento della proprietà "trims" di ogni auto nel nuovo array "justTrims", sotto definito.
 */
@@ -99,8 +105,8 @@ console.log(arrayfinito);
 const newArray=[];
 let v=0;
 while(numericArray.length>v){
-  if(numericArray[v].indexOf<=numericArray.indexOf(32)){newArray.push(numericArray[i])}
-  else{newArray.pop(numericArray[i])};v++
+if(numericArray.indexOf(numericArray[v])<=numericArray.indexOf(32)+2){newArray.push(numericArray[v])}
+else{newArray.pop(numericArray[v])};v++
 };
 console.log(newArray);
 
@@ -110,4 +116,54 @@ console.log(newArray);
     es. [f, b, e] --> [6, 2, 5]
 */
 const charactersArray = ['g', 'n', 'u', 'z', 'd']
-
+var arrayAlfabetico=[];
+for(let i=0; charactersArray.length>i;i++){
+switch (charactersArray[i]){
+  case "a": arrayAlfabetico.push(1)
+  break
+  case "b": arrayAlfabetico.push(2)
+  break
+  case "c": arrayAlfabetico.push(3)
+  break
+  case "d": arrayAlfabetico.push(4)
+  break
+  case "e": arrayAlfabetico.push(5)
+  break
+  case "f": arrayAlfabetico.push(6)
+  break
+  case "g": arrayAlfabetico.push(7)
+  break
+  case "h": arrayAlfabetico.push(8)
+  break
+  case "i": arrayAlfabetico.push(9)
+  break
+  case "j": arrayAlfabetico.push(10)
+  break
+  case "k": arrayAlfabetico.push(11)
+  break
+  case "l": arrayAlfabetico.push(12)
+  break
+  case "m": arrayAlfabetico.push(13)
+  break
+  case "n": arrayAlfabetico.push(14)
+  break
+  case "o": arrayAlfabetico.push(15)
+  break
+  case "p": arrayAlfabetico.push(16)
+  break
+  case "q": arrayAlfabetico.push(17)
+  break
+  case "r": arrayAlfabetico.push(18)
+  break
+  case "s": arrayAlfabetico.push(19)
+  break
+  case "t": arrayAlfabetico.push(20)
+  break
+  case "u": arrayAlfabetico.push(21)
+  break
+  case "v": arrayAlfabetico.push(22)
+  break
+  default:console.log("non hai inserito un carattere dell'alfabeto italiano");
+};
+};
+console.log(arrayAlfabetico);
