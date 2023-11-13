@@ -117,7 +117,7 @@ if(totalBlack>50){console.log('hai diritto alla spedizione gratuita!')}else{cons
 let numero7=1;
 let numero8=2;
 let numero9=3;
-if (numero7<numero8<numero9){console.log(numero7, numero8,numero9)}
+if (numero7<numero8<numero9){console.log(numero7,numero8,numero9)}
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
@@ -179,5 +179,5 @@ console.log(esercizio);
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
 esercizio.pop();
-esercizio.push(11);
+esercizio.push(100);
 console.log(esercizio[1])
