@@ -1,0 +1,66 @@
+.container{
+    background-color: brown;
+    width: 300px;
+}
+/* a 600 px di larghezza il colore cambia*/
+@media screen and (min-width:600px) {
+    .container{
+        background-color: blue;
+    }
+    #paragrafo{
+        color: blueviolet;
+    }
+}
+/*a 1000px di larghezza il colore il font cambiano*/
+@media screen and (min-width:1000px) {
+    .container{
+        background-color: aquamarine;
+    }
+    #paragrafo{
+        font-size: 2em;
+    }
+}
+/*quando lo schermo viene portato in orizzontale*/
+@media (orientation:landscape){
+    .container{
+        background-color: yellow;
+    }
+    #paragrafo{
+        font-size: 1.5em;
+    }
+}
+/*quando si manda in stampa la pagina*/
+@media print{
+    .container{
+        width: 50%;
+    }
+}
+
+#immagini{
+    width: 50%;
+    height: 100px;
+}
+/*immagine responsive si continua ad allargare e restringere*/
+#img1{
+        width:100%;
+        height: auto;
+    }
+/*immagine semi-responsive oltre un cero punto non si allarga più*/
+#img2{
+    max-width: 100%;
+    height: auto;
+}
+/*tab responsive, la parte che fuoriesce può essere visualizzata
+con una scroll bar*/
+#table{
+    overflow-x: auto;
+}
+/*da 500px in su il testo del paragrafo viene diviso su due colonne*/
+@media screen and (min-width:500px) {
+#paragrafo{
+    column-count: 2;
+    column-width: 10px;
+    column-fill: balance;
+    column-gap: 2px;
+    }
+}

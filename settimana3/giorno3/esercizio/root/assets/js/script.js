@@ -14,7 +14,7 @@ addBtn.addEventListener('click', function () {
 	} else {
 		alert('Inserire un task nel campo di input!');
 		return;
-	}
+	} 
 });
 /*se il dato inserito è buono la funzione aggiungitask pusha nell'array il valore inserito nel campo di 
 input*/
