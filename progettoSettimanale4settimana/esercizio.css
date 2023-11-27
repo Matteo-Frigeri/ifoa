@@ -284,6 +284,16 @@ aside {
     background-color: green;
 }  
 /*RESPONSIVE*/
-@media sceen and (min-width:768px){
-
+@media screen and (min-width:769px){
+.post{
+    width: 40%;
+}
+.aside{
+    flex-direction: column;
+}
+#lateralStiky{
+    width: 100%;
+    position: static;
+    margin-bottom: 5%;
+}
 }
