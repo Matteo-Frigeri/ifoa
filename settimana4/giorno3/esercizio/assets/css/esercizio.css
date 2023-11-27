@@ -1,0 +1,23 @@
+body{
+    font-size: 1em;
+    line-height: 1.5;
+}
+.laterale{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+#logo{
+    margin-top: 5%;
+    padding-right:10% ;
+    width: 17%;
+    height: 17%;
+}
+.box{
+    width: 15%;
+    height: 10%;
+    background-color: rgb(211, 186, 47);
+    border-radius: 40%;
+    text-align: center;
+    margin-top: 2%;
+}

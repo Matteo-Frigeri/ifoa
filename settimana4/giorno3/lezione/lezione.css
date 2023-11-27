@@ -1,0 +1,20 @@
+.contenitore{
+	display: flex;
+    /*flex-direction: column;dispone in colonna*/
+	flex-direction:row;
+	/*flex-direction: row-reverse;immagine a specchio*/
+	flex-wrap: wrap;/*manda a capo se gli items sono troppi per la sua larghezza*/
+	/*justify-content:space-between;stessa quantità di spazio tra elementi*/
+	/*justify-content: space-around;stesso quantitativo di sapzio intorno a ciascun item*/
+	justify-content: space-evenly;/*stesso quantitativo di sapzio tra e intorno item*/
+	border: 2px solid black;
+	width: 40%;
+}
+.item{
+	width: 50px;
+	height: 50px;
+	background-color: aqua;
+	margin: 5px 5px;
+	font-size: larger;
+	text-align: center;
+}

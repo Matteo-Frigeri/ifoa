@@ -1,0 +1,193 @@
+/* FLOAT */
+
+#contenitore {
+    width: 90%;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+/* APPLICO IL FLOAT LEFT CHE MI SPOSTERA L'ELEMENTO TUTTO A SX RISPETTO AL PARENT O FINESTRA SE NON HA PARENT */
+#contenitore1 {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    float: left;
+}
+
+/* APPLICO IL FLOAT RIGHT CHE MI SPOSTERA L'ELEMENTO TUTTO A DX RISPETTO AL PARENT O FINESTRA SE NON HA PARENT */
+#contenitore2 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    float: right;
+}
+
+/* QUESTO DIV VOGLIO INVECE CHE RITORNI NEL FLUSSO NORMALE */
+#contenitore3 {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    float: left;
+    /*clear: left; pulisce a sinistra*/
+    /*float: right;
+    clear: right; pulisce a destra*/
+    clear: both;
+    /*pulisce da ambo i lati*/
+}
+
+/* IN CASO APPLICO UN FLOAT AD UN ELEMENTO CONTENUTO IN UN CONTENITORE NON FLOTTANTE E L'ELEMENTO CHE HA IL FLOAT è PIU GRANDE DEL PARENT
+E' MOLTO PROBABILE IL FIGLIO FUORIESCA DAL PARENT CON IL FAMOSO BUG DEL COLLASSO DEL DIV */
+
+#contenitore_0 {
+    width: 90%;
+    margin: 0 auto;
+    border: 2px solid blue;
+}
+
+/* elemento flottante 
+NOTA: il testo che compare sotto si dispone al fianco dell'elemento float poichè questo e come se fosse stato estromesso dal
+normale flusso del doc.*/
+#contenitore_1 {
+    height: 100px;
+    width: 50px;
+    float: left;
+    padding: 10px;
+    background-color: blueviolet;
+}
+
+/* per fizare il problema applico quindi la classe clearfix al PARENT*/
+#contenitore_0::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* POSITIONING STATIC/RELATIVE/ABSOLUTE/STICKY/FIXED */
+
+/* STATIC => POSIZIONE NORMALE, VALORE DI DEFAULT DEGLI ELEMENTI */
+.contenitore {
+    width: 50%;
+    height: 110px;
+    background-color: rgb(114, 250, 177);
+    position: static;
+    margin: 20px;
+    border: solid 2px black;
+}
+
+/* RELATIVE => MANTIENE IL SUO COMPORTAMENTO NORMALE FINCHE NON ASSEGNO VALORI TIPO TOP/BOTTOM/LEFT/RIGHT */
+/* SE ASSEGNO VALORI DI POSIZIONAMENTO SI SPOSTERA SULLA BASE DEI VALORI ASSEGNATI DALLA SUA POSIZIONE ORIGINALE  */
+.contenitore1 {
+    width: 50%;
+    height: 110px;
+    background-color: yellow;
+    position: relative;
+    top: 10px;
+    left: 50px;
+    margin: 20px;
+    border: solid 2px black;
+}
+
+/* ABSOLUTE => SI POSIZIONA RISPETTO LA FINESTRA DEL BROWSER SULLA BASE DEI VAORI ASSEGNATI A TOP/BOTTOM/LEFT/RIGHT
+POSSO CAMBIARE IL CONTEXT DELL'ABSOLUTE, OVVERO LA BASE DA CUI PARTE IL POSIZIONAMENTO ATTRIBUENDO POSITION: RELATIVE A UN ELEMENTO PADRE
+DA QUEL MOMENTO ABSOLUTE PRENDERA COME RIFERIMENTO L'ELEMENTO PADRE PER POSIZIONARSI E NON PIU LA FINESTRA DEL BROWSER */
+#padreAssoluto {
+    position: relative;
+    width: 70%;
+    height: 120px;
+    border: 2px solid blue;
+}
+
+.contenitore2 {
+    width: 50%;
+    height: 110px;
+    background-color: green;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin: 20px;
+    border: solid 2px black;
+}
+
+/* FIXED => POSIZIONE ASSOLUTA RISPETTO LA FINESTRA DEL BROWSER O VIEWPORT, NON IMPORTA QUELLO CHE ACCADE, L'ELEMENTO RIMANE
+LI DOVE IO HO IMPOSTATO */
+.contenitore3 {
+    width: 50%;
+    height: 110px;
+    background-color: plum;
+    position: fixed;
+    top: 20%;
+    left: 80%;
+    margin: 20px;
+    border: solid 2px black;
+    z-index: 2;
+}
+
+/* STICKY => UN MIX TRA RELATIVE E FIXED, L'ELEMENTO SI COMPORTA RELATIVE FINTANTO SI TROVI NEL VIEWPORT, NELLA FINESTRA DEL BROWSER
+QUANDO RAGGIUNGE L'ESTREMITA CAMBIA IN FIXED E SI POSIZIONA DOVE ABBIAMO DEFINITO: MOLTO USATO PER LE HEADER E BOTTONI CALLTOACTION */
+#contenitore4 {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    position: sticky;
+    top: 0px;
+    left: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HOVER*/
+/*selezionimo un dispositivo con puntatore di precisione (mouse).
+Se volessi mettere un effetto su un bottone al passaggio del mouse; cosa che sarebbe 
+abbastanza inutile su smartphone*/
+@media screen and (hover:hover) {
+    button:hover {
+        border: 1px solid red;
+    }
+}
+
+@media screen and (hover:none) {}
+
+/*non ha puntatore di precisione, es: tablet o sm*/
+
+/*AND: due condizioni vere al contempo*/
+/*doppia sicurezza sul fatto di essere da mobile*/
+@media screen and (hover:hover) and (max-width:320px) {}
+
+/*POINTER*/
+/*
+fine: il mio dispositivo ha un puntatore di precisione (pc);
+coarse: un puntatore non di precisione (telecomando smart tv, console);
+none: non ha un puntatore di precisione (tablet, smart);
+*/
+@media screen and (pointer:fine) {}
+
+/* hover   pointer
+   none    coarse  =smartphone e touchscreen
+   none    fine    =stylus based screen
+   hover   course  =samrt tv e console
+   hover   fine    =pc, lapTop, touchpad*/
+
+/*,: una delle 2 o più condizioni deve essere verificata per apportare la modifica */
+@media screen and (max-width:320px),
+(orientation:landscape) {}
+
+/*NOT: da eseguire solo se la condizione data non è verificata, ad esempio se vado
+in stampa*/
+@media not screen {
+    /*quando non sono su uno schermo*/
+}

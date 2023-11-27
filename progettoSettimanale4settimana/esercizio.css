@@ -1,0 +1,289 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif
+}
+/*NAV*/
+nav {
+    box-sizing: border-box;
+}
+
+#menuTesta {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 15%;
+    background-color: #FFC017;
+    padding: 1%;
+    border-bottom: 2px solid black;
+    position: sticky; /*POSITIONING*/
+    top: 0px;
+    z-index: 10;
+    transition-property: background-color;
+    transition-duration: 1.5s;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    padding-right: 5%;
+}
+
+#vociMenu ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+#vociMenu li {
+    display: inline;
+    margin-right: 30px;
+}
+
+#bottoneMenu {
+    width: 100%;
+    height: 30px;
+    font-weight: bold;
+    color: white;
+    border-radius: 30px;
+    background-color: black;
+    border: none;
+    transition-property: background-color;
+    transition-duration: 1.5s;
+}
+
+/*ARTICLE*/
+main {
+    background-color: #FFC017;
+    padding-left: 7%;
+    display: flex;
+}
+
+#textMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+}
+
+#textMain h1 {
+    font-size: 6rem;
+    margin-bottom: 0.8%;
+}
+
+#textMain p {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+#textMain button {
+    font-size: 1.2rem;
+    width: 20%;
+    padding: 10px;
+    color: white;
+    border-radius: 30px;
+    background-color: black;
+    border: none;
+}
+
+#m p {
+    position: absolute;
+    margin: 0;
+    right: 0;
+    font-size: 1.3rem;
+    text-align: right;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/*ARTICLE*/
+article {
+    margin: 0 8%;
+}
+
+#mega {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+
+}
+
+#trend {
+    display: flex;
+    align-items: center;
+    padding-top: 4%;
+}
+
+#trend p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-left: 4%;
+}
+
+.post {
+    display: flex;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 25%;
+    font-size: 0.8rem;
+}
+
+.numero {
+    flex: 0 0 40px;
+    font-size: 2.7rem;
+    padding-right: 8%;
+    font-weight: bold;
+    opacity: 0.2;
+}
+
+.bloccoNews {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    max-width: 100%;
+}
+
+.iconPerson {
+    display: flex;
+    align-items: center;
+}
+.iconPerson img{
+    border-radius: 50%;
+    margin-right: 3%;
+}
+
+.description {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+aside {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0 8%;
+    gap: 5%;
+}
+
+/*LATERAL STIKY*/
+#lateralStiky {
+    width: 60%;
+    height: 100%;
+    position: sticky;
+    top:85px;
+}
+
+#discoverMore p {
+    font-size: 1.1rem;
+}
+
+.linkButton {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    gap: 5px 5px;
+}
+
+.linkButton button {
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+}
+
+#greenText p {
+    color: green;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+#lateralLink {
+    /*=link button*/
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    gap: 10px 20px;
+}
+
+#lateralLink a {
+    color: gray;
+    text-decoration: none;
+}
+
+/*SCROLL BAR*/
+.scrollBlock{
+    width: 58%;
+}
+.scrollBlockTextImage{
+    display: flex;
+    margin-bottom: 5%;
+}
+#mega2{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.scrollBlockName {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.scrollBlockName img{
+    border-radius: 50%;
+}
+.scrollBlockName p{
+    font-size: 0.7rem;
+}
+.scrollBlockComment h3{
+    font-weight: bolder;
+}
+.scrollBlockComment p{
+    margin-bottom: 0;
+    color: #6B6B6B;
+}
+
+.scrollBlockContent h3 {
+    margin: 0;
+}
+
+.scrollBlockIcon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: space-between;
+    
+}
+.scrollBlockIcon .star{
+    display: flex;
+    align-items: center;
+}
+
+.scrollBlockImage{
+    width: 250px;
+    height: 140px;
+    overflow: hidden;
+}
+.scrollBlockImage img{
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+ /*js*/
+ #menuTesta.scrolled {
+    background-color: white;
+  }
+#bottoneMenu.scrolled{
+    background-color: green;
+}  
+/*RESPONSIVE*/
+@media sceen and (min-width:768px){
+
+}

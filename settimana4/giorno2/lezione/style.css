@@ -1,0 +1,72 @@
+
+/* ESEMPIO STRUTTURA */
+body {
+  font-size: 20px;
+}
+
+
+.container {
+  width: 900px;
+  background-color: blanchedalmond;
+  margin: 0 auto;
+  padding: 50px
+}
+
+header {
+  background-color: blueviolet;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  position: sticky;
+  top: 1px;
+}
+
+header div {
+  display: inline;
+}
+
+.brand {
+  width: 75%;
+}
+
+header nav, ul {
+  display: inline;
+}
+
+header nav ul li {
+  list-style: none;
+  display: inline;
+}
+
+main {
+  margin-top: 100px;
+  height: 150vh;
+}
+
+.articolo {
+  border: 1px solid gray;
+  width: 350px;
+  float: left;
+  margin: 0 10px;
+}
+
+footer {
+  background-color: blueviolet;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  position: sticky;
+  bottom: 1px;
+}
+
+.img {
+  background-color: brown;
+  width: 150px;
+  height: 100px;
+  float: left;
+}
+
+.corpo {
+  clear: left;
+  padding-top: 30px;
+}
+
+
