@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <title>Dettaglio Prodotto</title>
+</head>
+
+<body>
+    <div id="boxCard">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        const boxCard = document.getElementById("boxCard");
+        let oggetto = [];
+        document.addEventListener("DOMContentLoaded", function () {
+            const boxContent = JSON.parse(localStorage.getItem("id"));
+            if (boxContent) {
+                oggetto.push(boxContent);
+                console.log(oggetto)
+                costruisci()
+            }
+        })
+        function costruisci() {
+            oggetto.forEach(el => {
+                boxCard.innerHTML += `
+                <h1 class="p-2 text-center">DETTAGLIO PRODOTTO</h1>
+                <div class="col w-100 text-center">
+        <div class="card shadow-sm h-900">
+            <img src="" class="img-fluid card-img-top" alt="image product">
+            <div class="card-body">
+                <h2>${el.name}</h2>
+                <h5>${el.description}</h5>
+                <p class="card-text badge rounded-pill bg-dark mb-2">${el.brand}</p>
+                <p class="fs-4">${el.price} $</p>
+                <div class="container d-flex justify-content-around">
+                    <p>Data creazione: ${el.createdAt}</p>
+                    <p>Data modifica: ${el.updatedAt}</p>
+                </div>
+                <div class="container d-flex justify-content-around text-lowercase">
+                    <p class="text-lowercase">ID User: ${el.userId}</p>
+                    <p class="text-lowercase">ID prodotto: ${el._id}</p>
+                </div>
+            </div>
+        </div>
+    </div>`
+            })
+            localStorage.removeItem("id");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <style>
+        a {
+          text-decoration: none !important;
+          color: white !important;
+        }
+      </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="display-4 text-center my-5" id="titolo">REGISTRA NUOVO PRODOTTO</h1>
+    <form class="p-5" id="form">
+        <div class="mb-3 d-flex ">
+            <div class="col mx-1">
+                <label for="inputName" class="form-label">Modello</label>
+                <input type="text" class="form-control" id="inputName">
+            </div>
+            <div class="col mx-1">
+                <label for="inputPrice" class="form-label">Prezzo</label>
+                <input type="number" min="0" class="form-control" id="inputPrice">
+            </div>
+        </div>
+        <div class="mb-3 d-flex ">
+            <div class="col mx-1">
+                <label for="inputBrand" class="form-label">Brand</label>
+                <input type="text" class="form-control" id="inputBrand">
+            </div>
+            <div class="col mx-1">
+                <label for="inputImageUrl" class="form-label">URL Foto prodotto</label>
+                <input type="text" class="form-control" id="inputImageUrl">
+            </div>
+        </div>
+        <div class="mb-3 d-flex ">
+            <div class="col">
+                <label for="inputDescription" class="form-label">Descrizione</label>
+                <input type="text" class="form-control" id="inputDescription">
+            </div>
+        </div>
+    </form>
+
+    <div class="w-100 d-flex justify-content-around px-5 text-center">
+        <div class="col-md-3 mt-4 btn-lg" id="bottone1">
+            <button type="#" class="btn btn-warning text-light" id="inviaDati" onclick="creaNuovo()"> CREA
+                NUOVO ARTICOLO
+            </button>
+        </div>
+        <div class="col-md-3 mt-4 btn-lg">
+            <button type="#" class="btn btn-primary text-light" id="modificaDati"> MODIFICA RISORSA
+            </button>
+        </div>
+        <div class="col-md-3 mt-4 btn-lg d-none" id="bottone2">
+            <button type="#" class="btn btn-warning text-light" id="eliminaDati"><a href="./paginaRaccolta.html">ELIMINA RISORSA</a> 
+            </button>
+        </div>
+        <div class="col-md-3 mt-4 btn-lg d-none" id="bottone3">
+            <button type="#" class="btn btn-warning text-light" id="modificaDati"><a href="./paginaRaccolta.html">AGGIORNA RISORSA</a> 
+            </button>
+        </div>
+        <div class="col-md-3 mt-4 btn-lg" id="bottone4">
+            <button type="#" class="btn btn-danger text-light" id="resettaCampi"> RESETTA TUTTI I CAMPI
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        const url = "https://striveschool-api.herokuapp.com/api/product/"
+        const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc0YTEwNTJjNmEwZDAwMTg0OTYwYjIiLCJpYXQiOjE3MDIzNjM1MjEsImV4cCI6MTcwMzU3MzEyMX0.diSyd_KjIrrqVQTYu1E-Wfap-4X84MtMBiRFmAQ2Atk";
+        const headers = {
+
+            "Authorization": token,
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+
+        function creaNuovo() {
+            const newRecord = {
+                "name": document.getElementById('inputName').value,
+                "brand": document.getElementById('inputBrand').value,
+                "description": document.getElementById('inputDescription').value,
+                "price": document.getElementById('inputPrice').value,
+                "imageUrl": document.getElementById('inputImageUrl').value,
+            }
+            fetch(url, {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify(newRecord)
+            })
+                .then(response => response.json())
+                .then(data =>
+                    console.log(data));
+        }
+
+        //SVUOTA CAMPI COMPILATI 
+        document.getElementById('resettaCampi').addEventListener('click', function () {
+
+            var clear = document.querySelectorAll('.form-control');
+
+            clear.forEach(function (input) {
+                input.value = '';
+            });
+        });
+
+    //PASSA A MOD "MODIFICA RISORSA"
+         document.getElementById("modificaDati").addEventListener("click", function () {
+            document.body.classList.toggle('mod-modifica');
+            cambiaTitolo();
+            cambiaBottone();
+            cambiaVisibilita();
+        })
+        //CAMBIA IL TITOLO
+        function cambiaTitolo() {
+            const titoloPagina = document.getElementById('titolo');
+
+            if (titoloPagina.innerText === 'REGISTRA NUOVO PRODOTTO') {
+                
+                titoloPagina.innerText = 'MODIFICA O ELIMINA RISORSA ESISTENTE';
+            } else {
+               
+                titoloPagina.innerText = 'REGISTRA NUOVO PRODOTTO';
+            }
+        }
+        //CAMBIA TESTO BOTTONE
+        function cambiaBottone() {
+            const nomeBottone = document.getElementById('modificaDati');
+
+            if (nomeBottone.innerText === 'MODIFICA RISORSA') {
+                
+                nomeBottone.innerText = 'TORNA INDIETRO';
+            } else {
+               
+                nomeBottone.innerText = 'MODIFICA RISORSA';
+            }
+        }
+        //CAMBIA VISIBILITà BOTTONI E FORM
+        function cambiaVisibilita() {
+
+            const bottone1 = document.getElementById('bottone1');
+            const bottone2 = document.getElementById('bottone2');
+            const bottone3 = document.getElementById('bottone3');
+            const bottone4=document.getElementById("bottone4")
+            const form=document.getElementById('form')
+
+            if (bottone2.classList.contains('d-none')) {
+                bottone4.classList.add('d-none');
+                bottone3.classList.remove('d-none');
+                bottone2.classList.remove('d-none');
+                bottone1.classList.add('d-none');
+                form.classList.add('d-none');
+
+            } else {
+                bottone1.classList.remove('d-none');
+                bottone2.classList.add('d-none');
+                bottone3.classList.add('d-none');
+                bottone4.classList.remove('d-none');
+                form.classList.remove('d-none');
+            }
+        };
+
+        //-----------------------------------------------------------------------------------------
+        //ELIMINA RISORSA
+        /*
+        function eliminaProdotto() {
+            const newRecord = {
+                "name": document.getElementById('inputName').value,
+                "brand": document.getElementById('inputBrand').value,
+                "description": document.getElementById('inputDescription').value,
+                "price": document.getElementById('inputPrice').value,
+                "imageUrl": document.getElementById('inputImageUrl').value,
+            }
+            fetch(url, {
+                method: 'DELETE',
+                headers: headers,
+                body: JSON.stringify(newRecord)
+            })
+                .then(response => response.json())
+                .then(data =>
+                    console.log(data));
+        }
+
+        function inviaRichiestaDelete(url) {
+    return fetch(url, {
+        method: 'DELETE',
+        headers: {
+            // Aggiungi eventuali header necessari
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Errore nella richiesta DELETE');
+        }
+        return response.json(); // Puoi rimuovere questa riga se non hai bisogno della risposta JSON
+    })
+    .catch(error => {
+        console.error('Errore:', error);
+    });
+}*/
+    </script>
+</body>
+
+</html>

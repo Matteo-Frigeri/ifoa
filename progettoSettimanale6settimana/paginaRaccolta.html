@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Prodotti</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row my-4">
+            <div class="alert text-center display-3" role="alert" id="alert">
+                PRODOTTI CREATI
+            </div>
+            <table class="table table-striped vw-100">
+                <thead>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Prezzo</th>
+                    <th scope="col">URl-Img</th>
+                    <th scope="col"></th>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="productDetails" tabindex="-1" aria-labelledby="productDetails" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productDetailsTitle">Modal title</h5>
+                </div>
+                <div class="modal-body">
+
+
+                    <form>
+                        <div class="mb-3 d-flex">
+                            <div class="col mx-1">
+                                <label for="inputName" class="form-label">Modello</label>
+                                <input type="text" class="form-control" id="inputName">
+                            </div>
+                            <div class="col mx-1">
+                                <label for="inputPrice" class="form-label">Prezzo</label>
+                                <input type="number" min="0" class="form-control" id="inputPrice">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputBrand" class="form-label">Brand</label>
+                            <input type="text" class="form-control" id="inputBrand">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputDescription" class="form-label">Descrizione</label>
+                            <input type="text" class="form-control" id="inputDescription">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputImageUrl" class="form-label">URL Foto prodotto</label>
+                            <input type="text" class="form-control" id="inputImageUrl">
+                        </div>
+                    </form>
+                    <div>
+                        <img src="" alt="" id="productPhoto" class="object-fit-contain border rounded" width="100%">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <button type="button" class="btn btn-primary" id="buttonSave" data-bs-dismiss="modal"
+                        onclick="sendData()">Salva</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./script.js">
+        /*const url = "https://striveschool-api.herokuapp.com/api/product/"
+        const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc0YTEwNTJjNmEwZDAwMTg0OTYwYjIiLCJpYXQiOjE3MDIzNjM1MjEsImV4cCI6MTcwMzU3MzEyMX0.diSyd_KjIrrqVQTYu1E-Wfap-4X84MtMBiRFmAQ2Atk";
+        const headers = {
+            "Authorization": token,
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+
+        let products = []
+
+
+        const getRecords = () => {
+            fetch(url, {
+                headers: headers
+            })
+                .then(response => response.json())
+                .then(data => {
+                    products = data
+                    console.log(data);
+                    createTable(data);
+                })
+        }
+
+        window.onload = () => { getRecords(); };
+
+        async function getRecord(id) {
+            const finalUrl = url + id
+            const response = await fetch(finalUrl, {
+                headers: headers
+            })
+            return response.json()
+        }
+
+        const deleteRecord = (id) => {
+            if (confirm('Confermi la tua scelta')) {
+                const finalUrl = url + id
+                fetch(finalUrl, {
+                    method: "DELETE",
+                    headers: headers
+                })
+                    .then(() => {
+                        products.splice(products.findIndex(element => element._id === id), 1)
+                        createTable(products)
+
+                    })
+                    .catch((err) =>
+                        console.log(err)
+                    )
+            }
+        }
+
+        function createTable(data) {
+            const table = document.querySelector('tbody')
+            table.innerHTML = ''
+
+            data.forEach(element => {
+                let newRow = `
+            <tr>
+                <th>${element._id}</th>
+                <td>${element.name}</td>
+                <td>${element.description}</td>
+                <td>${element.price}</td>
+                <td>${element.imageUrl.substr(0, 30)}</td>
+                <td class="justify-content-end">
+                    <button type="button" class="btn btn-sm btn-outline-primary mx-1" onclick="mostraOggetto('${element._id}')">Dettagli</button>
+                    <button type="button" class="btn btn-sm btn-outline-success mx-1" onclick="mostraBottoni()" id="gestione">Gestione</button>
+                    <button type="button" class="btn btn-sm btn-outline-warning mx-1 d-none" data-bs-toggle="modal" data-bs-target="#productDetails" onclick="handleModalData('${element._id}','edit')" id="b1">Modifica</button>
+                    <button type="button" class="btn btn-sm btn-outline-danger mx-1 d-none" onclick="deleteRecord('${element._id}')" id="b2">Elimina</button>
+                </td>
+            </tr>
+        `
+                table.innerHTML += newRow;
+            });
+        }
+        function mostraBottoni() {
+            cambiaBottone();
+            cambiaVisibilita();
+        }
+
+      
+        function cambiaBottone() {
+            const titoloPagina = document.getElementById('gestione');
+
+            if (titoloPagina.innerText === 'Gestione') {
+
+                titoloPagina.innerText = 'Indietro';
+            } else {
+
+                titoloPagina.innerText = 'Gestione';
+            }
+        }
+        
+        function cambiaVisibilita() {
+
+            const bottone1 = document.getElementById('b1');
+            const bottone2 = document.getElementById('b2');
+
+            if (bottone2.classList.contains('d-none')) {
+
+                bottone2.classList.remove('d-none');
+                bottone1.classList.remove('d-none')
+
+            } else {
+                
+                bottone1.classList.add('d-none');
+                bottone2.classList.add('d-none');
+            }
+        };
+
+
+
+
+        function mostraOggetto(id) {
+            const finalUrl = url + id;
+
+            fetch(finalUrl, {
+                headers: headers
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Errore nella richiesta');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+
+                    localStorage.setItem("id", JSON.stringify(data));
+                })
+                .catch(error => {
+                    console.error('Errore:', error);
+
+                });
+            mostraAlertConLink()
+        }
+
+        function mostraAlertConLink() {
+
+            const alertElement = document.createElement('div');
+            alertElement.classList.add('alert', 'alert-primary', 'alert-dismissible', 'fade', 'show');
+            alertElement.role = 'alert';
+
+
+            alertElement.innerHTML = `
+        Visita la pagina del prodotto: 
+        <button type="button" class="btn-close bg-danger" data-bs-dismiss="alert" aria-label="Close">CHIUDI</button>
+        <a href="./paginaDettaglio.html" class="btn btn-success">VAI AL DETTAGLIO PRODOTTO</a>
+    `;
+
+
+            document.body.appendChild(alertElement);
+
+
+            new bootstrap.Alert(alertElement);
+        }
+
+        async function handleModalData(id, action) {
+            action === 'show'
+                ? document.getElementById('buttonSave').style.display = 'none'
+                : document.getElementById('buttonSave').style.display = 'block'
+
+            if (id !== null) {
+                const data = await getRecord(id)
+                document.getElementById('productDetailsTitle').innerText = "Dettagli prodotto " + data.name
+                document.getElementById('inputName').value = data.name
+                document.getElementById('inputPrice').value = data.price
+                document.getElementById('inputDescription').value = data.description
+                document.getElementById('inputBrand').value = data.brand
+                document.getElementById('inputImageUrl').value = data.imageUrl
+                document.getElementById('productPhoto').src = data.imageUrl
+                document.getElementById('productPhoto').alt = "Immagine prodotto " + data.name
+                document.getElementById('buttonSave').setAttribute('onclick', `sendData('${action}', '${id}')`)
+            } else {
+                document.getElementById('productDetailsTitle').innerText = "Crea nuovo prodotto"
+                document.getElementById('inputName').value = ''
+                document.getElementById('inputPrice').value = ''
+                document.getElementById('inputDescription').value = ''
+                document.getElementById('inputBrand').value = ''
+                document.getElementById('inputImageUrl').value = ''
+                document.getElementById('productPhoto').src = ''
+                document.getElementById('productPhoto').alt = ''
+                document.getElementById('buttonSave').setAttribute('onclick', `sendData('${action}', null)`)
+            }
+        }
+
+        const sendData = (action, id) => {
+            const newRecord = {
+                "name": document.getElementById('inputName').value,
+                "brand": document.getElementById('inputBrand').value,
+                "description": document.getElementById('inputDescription').value,
+                "price": document.getElementById('inputPrice').value,
+                "imageUrl": document.getElementById('inputImageUrl').value,
+            }
+
+            const finalUrl = url + id
+
+            fetch(finalUrl, {
+                method: action = "PUT",
+                headers: headers,
+                body: JSON.stringify(newRecord)
+            })
+                .then((response) => response.json())
+                .then(data => {
+                    if (action === 'edit') {
+                        products.splice(products.findIndex(element => element._id === id), 1, data)
+                        createTable(products)
+                    } else {
+                        products.push(data)
+                        createTable(products)
+                    }
+                })
+        }*/
+
+    </script>
+</body>
+
+</html>
