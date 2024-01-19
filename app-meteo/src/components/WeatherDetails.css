@@ -1,0 +1,11 @@
+.WeatherDetails {
+    background-color: transparent; /* Colore di sfondo di default */
+  }
+  
+  .WeatherDetails div:nth-child(even) {
+    background: radial-gradient(circle at center, #9fd8ff, #ffffff);
+  }
+  
+  .WeatherDetails div:nth-child(odd) {
+    background: radial-gradient(circle at center, #3498db, #ffffff);
+  }
